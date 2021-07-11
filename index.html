@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ustinian</title>
+ 
+    <link rel="stylesheet" type="text/css" href="pc.css"/>
+ 	
+ 	 
+</head>
+<body id="item1">
+
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script>
+
+		$(function(){
+        //判断是否是手机
+        var mobile_flag = isMobile();
+        //alert(mobile_flag);
+        if(mobile_flag){
+    var css = document.createElement('link');
+    css.href="mobile.css";
+    css.rel="stylesheet";
+    css.type="text/css";
+    document.getElementsByTagName('head')[0].appendChild(css);
+        }else{
+                
+                var link = document.getElementsByTagName('link')[0];
+              link.setAttribute('href','pc.css');
+        }
+    })
+				function isMobile() {
+            var userAgentInfo = navigator.userAgent;
+ 
+            var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
+ 
+            var mobile_flag = false;
+ 
+            //根据userAgent判断是否是手机
+            for (var v = 0; v < mobileAgents.length; v++) {
+                if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+                    mobile_flag = true;
+                    break;
+                }
+            }
+             var screen_width = window.screen.width;
+             var screen_height = window.screen.height;   
+ 
+             //根据屏幕分辨率判断是否是手机
+             if(screen_width < 500 && screen_height < 800){
+                 mobile_flag = true;
+             }
+ 
+             return mobile_flag;
+        }
+	</script>
+<audio autoplay="autoplay"  loop="loop" preload="auto">
+<source src="music.mp3" type="audio/mpeg">
+</audio>	
+    <div class="item" id="item">
+    	<h3 style="text-align: center;">I wish you're a lucky girl</h3>
+    	
+    <br><br><br>  
+        	
+    <br><br><br> 
+        	
+    <br><br><br> 
+<p>你可能只是这个世界上的一个人，
+<br>但对于某些人来说，你就是全世界。
+<br><br><br>
+世界那么大，我想去看看。
+</p>
+
+<br><br><br>
+       <h5 style="text-align: center;">no one likes change unless she feels pain</h5>
+
+    </div>
+
+</body>
+</html>

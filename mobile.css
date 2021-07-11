@@ -1,0 +1,44 @@
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, .item::before{
+            background-image: url('ru.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        body{
+            min-height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item{
+            position: relative;
+            width: 90%;
+            height: auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 1px #000;
+            color: #fff;
+            font-size: 15px;
+            font-weight: lighter;
+            line-height: 30px;
+            overflow: hidden;
+           
+        }
+        .item::before{
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: -20px;
+            filter: blur(0px);
+        }
