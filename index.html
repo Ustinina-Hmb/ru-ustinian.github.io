@@ -14,6 +14,25 @@
 
 	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 	<script>
+window.onload = function ()
+{
+var oClock = document.getElementById("clock");
+var aSpan = oClock.getElementsByTagName("span");
+setInterval(getTimes, 1000);
+getTimes();
+function getTimes ()
+{
+var oDate = new Date();
+var aDate = [oDate.getHours(), oDate.getMinutes(), oDate.getSeconds()];
+for (var i in aDate) aSpan[i].innerHTML = format(aDate[i])
+}
+function format(a)
+{
+return a.toString().replace(/^(\d)$/, "0$1")
+}
+}
+</script>
+	<script>
 
 		$(function(){
         //判断是否是手机
@@ -55,24 +74,27 @@
  
              return mobile_flag;
         }
+				
 	</script>
 <audio autoplay="autoplay"  loop="loop" preload="auto">
 <source src="music.mp3" type="audio/mpeg">
 </audio>	
     <div class="item" id="item">
     	<h3 style="text-align: center;">I wish you're a lucky girl</h3>
-    	
-    <br><br><br>  
-        	
+ 	
+    <br> 
     <br><br><br> 
-        	
+
     <br><br><br> 
 <p>你可能只是这个世界上的一个人，
 <br>但对于某些人来说，你就是全世界。
 <br><br><br>
 世界那么大，我想去看看。
 </p>
-
+    	<br> 
+    	           <div id="clock" align="center">
+2021年<span></span>点<span></span>分<span></span>秒
+</div>
 <br><br><br>
        <h5 style="text-align: center;">no one likes change unless she feels pain</h5>
 
